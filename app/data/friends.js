@@ -1,18 +1,34 @@
-//Array of objects for friends with this format
-// {
-//     "name":"Ahmed",
-//     "photo":"https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
-//     "scores":[
-//         5,
-//         1,
-//         4,
-//         4,
-//         5,
-//         1,
-//         2,
-//         5,
-//         4,
-//         1
-//       ]
-//   }
-  
+var friends = [
+{
+    "name":"Ahmed",
+    "photo":"https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
+    "answers":[
+        5,
+        1,
+        4,
+        4,
+        5,
+        1,
+        2,
+        5,
+        4,
+        1
+      ]
+  },{
+    "name":"Madison",
+    "photo":"https://scontent.fapa1-2.fna.fbcdn.net/v/t1.0-0/p206x206/52842283_10218709238744893_4925099956794032128_n.jpg?_nc_cat=102&_nc_oc=AQnqSgAHjGy1yy3zq6jQkdX3n46HcIZwP5kGDynCpC54c-tgHpmO_sOLXL12jKDqDwrv_UBoEWhq05-H4b8jhnYk&_nc_ht=scontent.fapa1-2.fna&oh=0410f9bfef592037815cbca23404fff0&oe=5DEDA380",
+    "answers":[
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ]
+  },
+]
+module.exports = friends;
