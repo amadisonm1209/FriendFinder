@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
 </head>
 
 <body>
@@ -20,7 +21,7 @@
         <div class="jumbotron">
             <h1 class="display-4 text-center">Survey Questions</h1>
             <hr>
-            <h2 class="text-center">Please answer all questions where 1 = Strongly Disagree and 5 = Strongly Agree</h2>
+            <h4 class="text-center">Please answer all questions where 1 = Strongly Disagree and 5 = Strongly Agree</h2>
             <br>
 
         </div>
@@ -30,11 +31,11 @@
                 <div class="col-lg-12">
                     <div class="form-group">
                         <label for="name">Name (Required)</label>
-                        <input type="text" class="form-control" id="name" required>
+                        <input type="text" class="form-control is-valid" id="name" required>
                     </div>
                     <div class="form-group">
                         <label for="picture">Link to Photo (Required)</label>
-                        <input type="text" class="form-control" id="photo" required>
+                        <input type="text" class="form-control is-valid" id="photo" required>
                     </div>
                     <h3 class="col-lg-6">Question One</h3>
                     <label class="my-1 mr-2" for="question1"><strong>Your Friday night looks like a beer on a
@@ -147,7 +148,7 @@
                     </select>
                 </div>
             </div>
-
+            <br>
             <button type="submit" class="btn btn-primary" id="submit">Get Your Friend!</button>
         </form>
 
@@ -177,15 +178,17 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h2 class="modal-title">Your Friend Match</h2>
+                    <button type="button" class="close float-right" data-dismiss="modal">&times;</button>
                 </div>
-                <div class="modal-main">
+                <div class="modal-title text-center">
+                    <h2>Your Friend Match</h2>
+                </div>
+                <div class="modal-main text-center">
                     <h5 id="match"></h5>
                     <img id="matchImage" src="" width="400px">
                 </div>
                 <div class="modal-footer">
-                    <a href="/survey" class="modal-close">Take the Survey Again</a>
+                    <a href="/survey" class="modal-close text-center">Take the Survey Again</a>
                 </div>
             </div>
         </div>
@@ -194,7 +197,9 @@
 
     <script type="text/javascript">
         $("#submit").on("click", function () {
-            console.log("Clicked!")
+        
+            if ($(".is-valid").val() !== ""){
+            console.log("Clicked!") 
 
             var userInfo = {
                 name: $("#name").val().trim(),
@@ -225,6 +230,9 @@
                 $('#match-modal').modal("toggle");
                 console.log("Data Sent")
             });
+        }else {
+            alert ("Please complete required fields before continuing.")
+        }
             return false;
         });
 

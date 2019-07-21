@@ -40,8 +40,8 @@ module.exports = function (app) {
         }
       }
     }
-      //push to friends array to display on API
-      friends.push(newFriend);
-      res.json(match);
-    });
+    //push to friends array to display on API
+    friends.push(newFriend);
+    res.json(match);
+  });
 };
